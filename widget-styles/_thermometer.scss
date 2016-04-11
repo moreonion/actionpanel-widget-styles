@@ -1,0 +1,68 @@
+// For custom styling, choose the 'Apply only basic CSS' option in Edit Widget -> Design ->
+// Advanced settings to stop the JavaScript adding style attributes.
+
+// If you use this stylesheet for custom styling, uncomment the styles below according to your needs.
+
+$default-primary-color: #e91e62 !default;
+$default-bg-color: #fff !default;
+$default-container-bg: #f1f1f1 !default;
+
+$thermometer-width: 18px;
+$thermometer-height: 200px;     // min 45px
+$thermometer-bulb-width: 30px;  // min 15px
+$thermometer-border-width: 0px; // min 0px
+$thermometer-border-color: $default-bg-color;
+$thermometer-container-bg: $default-container-bg;
+$thermometer-bar-bg: $default-bg-color;
+$thermometer-bar-color: $default-primary-color;
+$thermometer-box-shadow: inset 1px 1px 3px 3px rgba(227,227,227,0.23);
+$thermometer-border-radius: 0px;
+$thermometer-text-max-width: 13em;
+
+.actionpanel-widget.thermometer {
+  // background: $thermometer-container-bg;
+  .actionpanel-widget-thermometer-text-left, .actionpanel-widget-thermometer-text-right {
+    display: inline-block;
+    vertical-align: top;
+    margin: 1em;
+    max-width: $thermometer-text-max-width;
+  }
+  .actionpanel-widget-thermometer-wrapper {
+    display: inline-block;
+    position: relative;
+    min-height: $thermometer-height + $thermometer-bulb-width - $thermometer-border-width;
+    .actionpanel-widget-thermometer-bar-wrapper {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: ($thermometer-bulb-width - $thermometer-width) / 2;
+      width: $thermometer-width;
+      height: $thermometer-height;
+      overflow: hidden;
+      // border-radius: $thermometer-border-radius $thermometer-border-radius 0 0;
+      // border: $thermometer-border-width solid $thermometer-border-color;
+      border-bottom-width: 0!important;
+      background: $thermometer-bar-bg;
+      // box-shadow: $thermometer-box-shadow;
+    }
+    .actionpanel-widget-thermometer-bar {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      min-height: $thermometer-width / 5;
+      background-color: $thermometer-bar-color;
+    }
+    .actionpanel-widget-thermometer-bulb {
+      display: block;
+      position: relative;
+      top: $thermometer-height - $thermometer-border-width / 2 - $thermometer-width / 6;
+      width: $thermometer-bulb-width;
+      height: $thermometer-bulb-width;
+      border-radius: 50%!important;
+      // border: $thermometer-border-width solid $thermometer-border-color;
+      background-color: $thermometer-bar-color;
+    }
+  }
+}

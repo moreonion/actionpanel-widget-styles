@@ -1,0 +1,70 @@
+// For custom styling, choose the 'Apply only basic CSS' option in Edit Widget -> Design ->
+// Advanced settings to stop the JavaScript adding style attributes.
+
+// If you use this stylesheet for custom styling, uncomment the styles below according to your needs.
+
+$supporters-separator-width: 1px;
+$supporters-separator-color: #e3e3e3;
+$supporters-name-color: $default-primary-color;
+$supporters-timestamp-color: darken($supporters-separator-color, 20%);
+$supporters-unknown-flag-bg-color: #d0d0d0;
+$supporters-unknown-flag-color: darken($supporters-unknown-flag-bg-color, 50%);
+
+.actionpanel-widget-supporters {
+
+  ul.actionpanel-widget-supporters-recent-supporters {
+    list-style: none;
+    //border-top: $supporters-separator-width solid $supporters-separator-color;
+  }
+
+  .actionpanel-widget-supporters-supporter {
+    position: relative;
+    //border-bottom: $supporters-separator-width solid $supporters-separator-color;
+    padding: 0.25em 0 0.75em;
+    margin-bottom: 0.5em;
+
+    &:first-child {
+      padding-top: 0.75em;
+    }
+  }
+
+  .actionpanel-widget-supporters-name {
+    //font-weight: bold;
+    //color: $supporters-name-color;
+  }
+
+  .actionpanel-widget-supporters-time {
+    //font-style: italic;
+    //font-size: 0.6em;
+    color: $supporters-timestamp-color;
+    display: inline-block;
+  }
+
+  .actionpanel-widget-supporters-flag {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -0.25em;
+    margin-right: 16px;
+    overflow: hidden;
+    color: transparent; /* hide text */
+    line-height: 0; /* hide text */
+  }
+
+  /* placeholder flag for unknown countries */
+  .actionpanel-widget-supporters-flag-no-cc::before {
+    display: block;
+    content: "?";
+    width: 30px;
+    height: 21px;
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    color: $supporters-unknown-flag-color;
+    background-color: $supporters-unknown-flag-bg-color;
+    border: 1px solid darken($supporters-unknown-flag-bg-color, 2%);
+    border-radius: 2px;
+    position: relative;
+  }
+
+}

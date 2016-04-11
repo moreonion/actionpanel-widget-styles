@@ -1,0 +1,14 @@
+$default-container-padding: 1.5em!default;
+
+.actionpanel-widget {
+
+  width: 100%;
+  padding: $default-container-padding;
+
+  .actionpanel-widget-text-above {
+    margin-bottom: $default-container-padding*2/3;
+  }
+  .actionpanel-widget-text-below {
+    margin-top: $default-container-padding*2/3;
+  }
+}
